@@ -15,12 +15,6 @@ y = data["Temp"].values
 
 # separates the data into training and testing sets
 xtrain, xtest, ytrain, ytest = train_test_split(x, y, test_size = .2)
-print(f"x {x}")
-print(f"y {y}")
-print(f"xtrain {xtrain}")
-print(f"xtest {xtest}")
-print(f"ytrain {ytrain}")
-print(f"ytest {ytrain}")
 
 # reshape the xtrain data into a 2D array
 xtrain = xtrain.reshape(-1, 1)
@@ -67,7 +61,6 @@ plt.figure(figsize=(5,4))
 #creates a scatter plot and labels the axes
 plt.scatter(xtrain,ytrain, c="purple", label="Training Data")
 plt.scatter(xtest, ytest, c="blue", label="Testing Data")
-
 plt.scatter(xtest, predict, c="red", label="Predictions")
 
 plt.xlabel("Temperature ºF")
