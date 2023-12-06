@@ -15,7 +15,7 @@ y = data["Blood Pressure"].values
 # Create your training and testing datasets:
 xtrain, xtest, ytrain, ytest = train_test_split(x, y, test_size = .2)
 
-
+ 
 # Use reshape to turn the x values into 2D arrays:
 xtrain = xtrain.reshape(-1,1)
 
@@ -28,7 +28,7 @@ model = LinearRegression().fit(xtrain, ytrain)
 
 coef = round(float(model.coef_), 2)
 bias = round(float(model.intercept_), 2)
-r_squared = model.score(xtrain, ytrain)
+r_squared = model.score(xtrain, ytrain) 
 
 # Print out the linear equation and r squared value:
 print("Model's Linear Equation: y=",coef, "x+", bias)
