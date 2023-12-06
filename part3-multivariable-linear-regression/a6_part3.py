@@ -10,6 +10,7 @@ y = data["Price"].values
 
 #split the data into training and testing data
 
+
 #create linear regression model
 
 #Find and print the coefficients, intercept, and r squared values. 
