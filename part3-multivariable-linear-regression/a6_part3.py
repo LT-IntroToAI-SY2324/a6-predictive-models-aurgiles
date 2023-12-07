@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 
 #imports and formats the data
 data = pd.read_csv("part3-multivariable-linear-regression/car_data.csv")
-x = data[["miles","age"]].values
+x = data[["miles(000)","age"]].values
 y = data["Price"].values
 
 #split the data into training and testing data
@@ -19,13 +19,24 @@ model = LinearRegression().fit(xtrain, ytrain)
 coef = np.around(model.coef_, 2)
 intercept = round(float(model.intercept_), 2)
 r_squared = round(model.score(x, y),2)
-print(coef)
-print(intercept)
-print(r_squared)
+print("coef value:", coef)
+print("Intercept value:", intercept)
+print("R Squared value:", r_squared)
+
 
 predict = model.predict(xtest)
 predict = np.around(predict, 2)
 print(predict)
+
+#predictions for the write up
+wup = model.predict([[89, 10]])
+wup = np.around(wup, 2)
+print("preds for 10 year car:", wup)
+wup2 = model.predict([[150,20]])
+wup2 = np.around(wup2, 2)
+print("preds for 20 year car:", wup2)
+
+
 
 
 #Loop through the data and print out the predicted prices and the 
